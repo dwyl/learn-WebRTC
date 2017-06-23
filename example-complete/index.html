@@ -11,7 +11,13 @@
 
 <body>
   <h1>dwyl SimpleWebRTC demo</h1>
-
+  <form class='start-form'>
+    <label for="room-name">Name of room you would like to join</label>
+    <input type="text" id='room-name'>
+    <label for="nickname">Nickname</label>
+    <input type="text" id='nickname'>
+    <button type='submit'>Go</button>
+  </form>
   <section class='video-chat'>
     <video height="300" id="localVideo"></video>
     <div id="remotesVideos"></div>
