@@ -1,3 +1,41 @@
+# Learn WebRTC (Real-Time Communications)
+
+## Why?
+
+> One of the last major challenges for the web is to enable human communication
+via voice and video: Real Time Communication, RTC for short. RTC should be as
+natural in a web application as entering text in a text input. Without it, we're
+limited in our ability to innovate and develop new ways for people to interact.
+
+> Historically, RTC has been corporate and complex, requiring expensive audio
+and video technologies to be licensed or developed in house. Integrating RTC
+technology with existing content, data and services has been difficult and time
+consuming, particularly on the web. - [Html5Rocks introduction to WebRTC](https://www.html5rocks.com/en/tutorials/webrtc/basics/)
+
+WebRTC tries to address this challenge by providing a common platform for
+real-time communication on the web. It hands browsers the ability to directly
+communicate without relaying through a server. This in turn enables blazingly
+fast, _private_ (in WebRTC encrypted is mandatory) video and audio chat as well
+as peer-to-peer data transfer.
+
+## What?
+
+WebRTC uses several JavaScript APIs to connect users and stream audio/video media:
+
++ getUserMedia() - creates video and audio streams from the user's webcam/mic.
++ RTCPeerConnection() - connects users :heart:
++ RTCDataChannel() - streams data between connected users
+
+Although WebRTC doesn't usually require a web server for its real-time
+communication, it does need one to 'introduce' users to each other (known as a
+_signaling server_).
+
+In our example we use [SimpleWebRTC](https://simplewebrtc.com/) to negate the
+need for a signaling server and to simplify the WebRTC interface. If
+you'd like to learn more about vanilla WebRTC API or want to run a signaling
+server of your own, check out the [Further Reading section](#reading) below.
+
+
 ## How?
 To get started with Web RTC stuff we are using [SimpleWebRTC](https://github.com/andyet/SimpleWebRTC/) which is a great library, it does all of the WebRTC configuration/handshake stuff for you so you can get on to making cool WebRTC stuff! It's still definitely worthwhile to learn the stuff under the hood, but SimpleWebRTC is a good way to start off.
 
@@ -143,3 +181,18 @@ document.getElementById('message-form').addEventListener('submit', function(e) {
 ```
 
 Now, refresh your two browser windows, and send some messages between the two! Congrats, you just made a video and text chat!
+
+## Further Reading
+
+#### Resources
+
++ The home of WebRTC: https://webrtc.org/
++ Sample projects and demos: https://webrtc.github.io/samples/
++ simpleWebRTC - a _simple_ interface for WebRTC applications: https://simplewebrtc.com/
++ socket.io p2p - the socket.io implementation of WebRTC: https://github.com/socketio/socket.io-p2p
+
+#### Guides and tutorials
+
++ A super informative Google codelab introduction to WebRTC: https://codelabs.developers.google.com/codelabs/webrtc-web/#0
++ Html5Rocks on WebRTC: https://www.html5rocks.com/en/tutorials/webrtc/basics/
++ Text chat with WebRTC: https://www.tutorialspoint.com/webrtc/webrtc_text_demo.htm
