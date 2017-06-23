@@ -1,12 +1,13 @@
+// get the set up form and the chat elements from the DOM
 var startForm = document.querySelector('.start-form');
 var videoChat = document.querySelector('.video-chat');
 
-var webrtc;
+var webrtc; //initialise webrtc variable so it is avalable globally
 
 startForm.addEventListener('submit', function(event) {
   event.preventDefault();
-  startForm.style.display = 'none';
-  videoChat.style.display = 'initial';
+  startForm.style.display = 'none'; //hide the start form
+  videoChat.style.display = 'initial'; //show the chat page
   var nickname = event.target[1].value;
   var roomName = event.target[0].value;
   webrtc = new SimpleWebRTC({
@@ -16,11 +17,14 @@ startForm.addEventListener('submit', function(event) {
     remoteVideosEl: 'remotesVideos',
     // immediately ask for camera access
     autoRequestMedia: true,
+    // What media to send, defaults to both being true, we're putting audio false to stop any feedback loops or annoying sound stuff
+    media: { video: true, audio: false },
+    // the name which will be sent with any data
     nick: nickname,
   });
   // we have to wait until it's ready
   webrtc.on('readyToCall', function() {
-    // you can name it anything
+    // The name of the room to join. SimpleWebRTC uses a default server to connect people, which we're using for this demo, so any rooms will be public, and if anyone joins a room with the same name, will be included in your chat.
     webrtc.joinRoom(roomName);
   });
 
@@ -46,21 +50,30 @@ document.getElementById('message-form').addEventListener('submit', function(e) {
   e.preventDefault();
   console.log(e.target[0].value);
   var content = e.target[0].value;
-  //sendDirectlyToAll sends over webRTC where sendToAll sends via sockets, so if we want to send peer to peer rather than via a server we use this.
+  // if content isn't blank send a message
   if (content) {
+    /*
+    sendDirectlyToAll sends over webRTC where sendToAll sends via sockets, so if we want to send peer to peer rather than via a server we use this.
+
+    The first and second arguments can strings of whatever you want, just make sure where you receive the message you look for the same things
+
+    The third argument is an object with any number of key/value pairs you want, which will be sent as the payload to all other users in the room.
+    */
     webrtc.sendDirectlyToAll('p2pchat', 'chat', {
       message: content,
     });
+    // reset target and value on input to nothing once the message is sent
     e.target[0].placeholder = '';
     e.target[0].value = '';
     addToChat('Me', content);
   } else {
+    // else tell the user it can't be blank
     e.target[0].placeholder = 'Cannot be blank';
   }
 });
-
+// a little function
 function addToChat(name, message) {
   var newText = document.createElement('p');
   newText.textContent = name + ': ' + message;
-  document.querySelector('body').appendChild(newText);
+  document.querySelector('.text-chat').appendChild(newText);
 }

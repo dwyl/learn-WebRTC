@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
   <link rel="stylesheet" href="style.css">
   <title>SimpleWebRTC text and video chat</title>
 </head>
+
 <body>
+  <h1>dwyl SimpleWebRTC demo</h1>
   <form class='start-form'>
     <label for="room-name">Name of room you would like to join</label>
     <input type="text" id='room-name'>
@@ -16,14 +19,19 @@
     <button type='submit'>Go</button>
   </form>
   <section class='video-chat'>
-  <video height="300" id="localVideo"></video>
-  <div id="remotesVideos"></div>
-  <form id="message-form">
-    <input placeholder="Type your message here!"/>
-    <button id="send-message" type="submit">Send</button>
-  </form>
-</section>
+    <video height="300" id="localVideo"></video>
+    <div id="remotesVideos"></div>
+    <form id="message-form">
+      <input placeholder="Type your message here!" />
+      <button id="send-message" type="submit">Send</button>
+    </form>
+    <section class="text-chat">
+      <h2>Chat</h2>
+    </section>
+
+  </section>
   <script src="https://simplewebrtc.com/latest-v2.js"></script>
   <script src="script.js" charset="utf-8"></script>
 </body>
+
 </html>
