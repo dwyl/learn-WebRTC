@@ -19,16 +19,21 @@
     <button type='submit'>Go</button>
   </form>
   <section class='video-chat'>
-    <video height="300" id="localVideo"></video>
-    <div id="remotesVideos"></div>
-    <form id="message-form">
-      <input placeholder="Type your message here!" />
-      <button id="send-message" type="submit">Send</button>
-    </form>
-    <section class="text-chat">
-      <h2>Chat</h2>
-    </section>
 
+    <div id="remotesVideos">
+      <video height="300" id="localVideo" class="local-video"></video>
+    </div>
+
+    <section class="chat-container">
+      <h2>Chat</h2>
+      <section class="text-chat">
+        <p/>
+      </section>
+      <form id="message-form">
+        <input placeholder="Type your message here!" />
+        <button id="send-message" type="submit">Send</button>
+      </form>
+    </section>
   </section>
   <script src="https://simplewebrtc.com/latest-v2.js"></script>
   <script src="script.js" charset="utf-8"></script>

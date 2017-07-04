@@ -1,3 +1,54 @@
+html, body {
+  font-family: Ubuntu, Helvetica, sans-serif;
+  height: 100%
+}
+
 .video-chat {
   display: none;
+}
+
+.local-video {
+  width: 47%;
+  transform: scaleX(-1);
+  left: 1em;
+  top: 6em;
+  height: auto;
+  border-radius: 10px;
+  border: 6px solid #6db4ac;
+  display: inline-block;
+}
+
+.local-video:before {
+    left: 0;
+    content: "Coming Soon";
+    background: rgba(255, 255, 255, 0.59);
+    color: #000;
+    width: 100%;
+    height: 100%;
+    line-height: 2.5;
+    font-weight: 600;
+   position: absolute;
+}
+
+#remotesVideos {
+  width: 80%;
+  font-size: 0;
+  display: inline-block;
+}
+
+video:last-child{
+  border: 6px solid palevioletred;
+  width: 47%;
+  border-radius: 10px;
+  display: inline-block;
+}
+.chat-container {
+  display: inline-block;
+  width: 15%
+}
+
+.text-chat{
+  height: 24em;
+  /*transform: rotateX(180deg);*/
+  overflow-y: scroll;
 }
