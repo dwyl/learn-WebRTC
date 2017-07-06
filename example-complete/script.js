@@ -1,13 +1,13 @@
 // get the set up form and the chat elements from the DOM
 var startForm = document.querySelector('.start-form');
-var videoChat = document.querySelector('.video-chat');
+var videoChat = document.querySelector('.wrap');
 
 var webrtc; //initialise webrtc variable so it is avalable globally
 
 startForm.addEventListener('submit', function(event) {
   event.preventDefault();
   startForm.style.display = 'none'; //hide the start form
-  videoChat.style.display = 'block'; //show the chat page
+  videoChat.style.display = 'flex'; //show the chat page
   var nickname = event.target[1].value;
   var roomName = event.target[0].value;
   webrtc = new SimpleWebRTC({
@@ -46,7 +46,7 @@ startForm.addEventListener('submit', function(event) {
   });
 });
 
-document.getElementById('message-form').addEventListener('submit', function(e) {
+document.getElementById('chat-form').addEventListener('submit', function(e) {
   e.preventDefault();
   console.log(e.target[0].value);
   var content = e.target[0].value;

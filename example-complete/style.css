@@ -1,54 +1,67 @@
 html, body {
   font-family: Ubuntu, Helvetica, sans-serif;
-  height: 100%
+  height: 100%;
+  margin: 0px;
 }
 
-.video-chat {
+.start-form {
+  padding: 1rem;
+}
+
+.wrap {
   display: none;
 }
 
-.local-video {
-  width: 47%;
-  transform: scaleX(-1);
-  left: 1em;
-  top: 6em;
+.videos {
+  max-width: 100%;
+  height: 100%;
+  flex: 1;
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-me {
+  position: absolute;
+  width: 20%;
   height: auto;
-  border-radius: 10px;
-  border: 6px solid #6db4ac;
-  display: inline-block;
+  background-color: white;
+  bottom: 2rem;
+  right: 2rem;
 }
 
-.local-video:before {
-    left: 0;
-    content: "Coming Soon";
-    background: rgba(255, 255, 255, 0.59);
-    color: #000;
-    width: 100%;
-    height: 100%;
-    line-height: 2.5;
-    font-weight: 600;
-   position: absolute;
+.video-you {
+  width: 100%;
+  height: auto;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-#remotesVideos {
-  width: 80%;
-  font-size: 0;
-  display: inline-block;
+.video-you video {
+  width: 100%;
+  height: 100vh;
 }
 
-video:last-child{
-  border: 6px solid palevioletred;
-  width: 47%;
-  border-radius: 10px;
-  display: inline-block;
-}
-.chat-container {
-  display: inline-block;
-  width: 15%
+.chat {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 2rem 1rem 2rem;
+  box-sizing: border-box;
 }
 
-.text-chat{
-  height: 24em;
-  /*transform: rotateX(180deg);*/
+.chat-form {
+  align-self: flex-end;
+}
+
+.text-chat {
+  flex: 1;
   overflow-y: scroll;
+}
+
+h2 {
+  align-self: flex-start;
 }
