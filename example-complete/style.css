@@ -1,0 +1,67 @@
+html, body {
+  font-family: Ubuntu, Helvetica, sans-serif;
+  height: 100%;
+  margin: 0px;
+}
+
+.start-form {
+  padding: 1rem;
+}
+
+.wrap {
+  display: none;
+}
+
+.videos {
+  max-width: 100%;
+  height: 100%;
+  flex: 1;
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-me {
+  position: absolute;
+  width: 20%;
+  height: auto;
+  background-color: white;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.video-you {
+  width: 100%;
+  height: auto;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.video-you video {
+  width: 100%;
+  height: 100vh;
+}
+
+.chat {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 2rem 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.chat-form {
+  align-self: flex-end;
+}
+
+.text-chat {
+  flex: 1;
+  overflow-y: scroll;
+}
+
+h2 {
+  align-self: flex-start;
+}
